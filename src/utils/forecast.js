@@ -20,7 +20,7 @@ const forecast = (latitude, longitude, callback) => {
         body.daily.data[0].summary +
           ' It is currently ' +
           body.currently.temperature +
-          ' degrees out. The gigh today is ' +
+          ' degrees out. The high today is ' +
           body.daily.data[0].temperatureHigh +
           ' with a low of ' +
           body.daily.data[0].temperatureLow +
