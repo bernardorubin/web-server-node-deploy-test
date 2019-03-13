@@ -6,7 +6,8 @@ const forecast = (latitude, longitude, callback) => {
     latitude +
     ',' +
     longitude +
-    '?units=si&lang=es'
+    '?units=si'
+  // '?units=si&lang=es'
 
   request({ url, json: true }, (error, { body }) => {
     if (error) {
@@ -19,7 +20,11 @@ const forecast = (latitude, longitude, callback) => {
         body.daily.data[0].summary +
           ' It is currently ' +
           body.currently.temperature +
-          ' degrees out there is a ' +
+          ' degrees out. The gigh today is ' +
+          body.daily.data[0].temperatureHigh +
+          ' with a low of ' +
+          body.daily.data[0].temperatureLow +
+          '. There is a ' +
           body.currently.precipProbability +
           '% chance of rain'
       )
